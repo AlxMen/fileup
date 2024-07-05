@@ -23,10 +23,13 @@ export default function uploadPage() {
           method: "POST",
           body: formData,
         });
+        
+        
 
         if (response.ok) {
           const { filePath } = await response.json();
           console.log("Archivo subido correctamente:", filePath);
+          
         } else {
           try {
             const errorData = await response.json();
